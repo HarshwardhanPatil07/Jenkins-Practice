@@ -93,3 +93,13 @@ npm --version
 ```
 
 Integrate Maven by using the "Invoke top-level Maven targets" option with Maven 3.9.
+
+1. Install Nodejs from plugins 
+
+2. Go in Tools and add Nodejs
+
+3. now you can go to job build steps and add nodejs below maven 
+
+4. you can do source code management in your job by using the git. 
+
+5. Add the repository url and then add jenkins and provide your credentials so jenkins can access the repo.
