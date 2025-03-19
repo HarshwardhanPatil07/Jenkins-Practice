@@ -141,3 +141,37 @@ PS C:\> docker run -p 8080:8080 -p 50000:50000 -d `
 >> -v jenkins_home:/var/jenkins_home `
 >> -v /var/run/docker.sock:/var/run/docker.sock jenkins/jenkins:lts
 ```
+
+
+
+
+## Docker in jenkins. Pushing to docker hub
+
+docker exec -u 0 -it cd42f9560272 bash
+
+
+root@cd42f9560272:/# curl https://get.docker.com/ > dockerinstall && chmod 777 dockerinstall && ./dockerinstall
+
+
+root@cd42f9560272:/# ls -l /var/run/docker.sock
+srw-rw---- 1 root root 0 Mar 19 12:27 /var/run/docker.sock
+root@cd42f9560272:/# chmod 666 /var/run/docker.sock
+root@cd42f9560272:/# ls -l /var/run/docker.sock
+srw-rw-rw- 1 root root 0 Mar 19 12:27 /var/run/docker.sock
+
+
+in configure now add repository, credentials, then add maven3.9, execute shell in build steps:  docker build -t java-maven-app:1.0 .
+
+
+and the Docker Image is build
+
+Now next step to Docker image to Docker Hub
+
+![Docker Image](/assets/Jenkins_DockerImage.png)
+
+docker build -t harshwardhan07/harshwardhan:jenkinsJMA-1.0 .
+docker login -u $USERNAME -p $PASSWORD
+docker push harshwardhan07/harshwardhan:jenkinsJMA-1.0
+
+Succesfully pushed
+![alt text](/assets/Docker-Hub_Repository.png)
