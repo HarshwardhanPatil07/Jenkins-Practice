@@ -103,3 +103,41 @@ Integrate Maven by using the "Invoke top-level Maven targets" option with Maven 
 4. you can do source code management in your job by using the git. 
 
 5. Add the repository url and then add jenkins and provide your credentials so jenkins can access the repo.
+
+
+## How to Recover Password if the initialAdminPassword File Gets Deleted
+
+### Reset the Admin Password by Disabling Security Temporarily
+
+1. **Open a shell in your Jenkins container:**
+    ```bash
+    docker exec -it cd42f9560272 /bin/bash
+    ```
+
+2. **Open the Jenkins configuration file (`config.xml`) located in `/var/jenkins_home` using an editor (e.g., `vi`):**
+    ```bash
+    vi /var/jenkins_home/config.xml
+    ```
+
+3. **Locate the `<useSecurity>` tag and change its value from `true` to `false`:**
+    ```xml
+    <useSecurity>false</useSecurity>
+    ```
+
+4. **Save the file and exit the editor, then restart the container:**
+    ```bash
+    docker restart cd42f9560272
+    ```
+
+5. **Access Jenkins at `http://localhost:8080`. You should now be able to log in without a password. Once in, re-enable security by setting up a new admin user and password.**
+
+
+## Attaching to Previous Volume for New Container by Killing the Older One
+
+To attach to the previous volume for a new container by killing the older one, run the following command:
+
+```powershell
+PS C:\> docker run -p 8080:8080 -p 50000:50000 -d `
+>> -v jenkins_home:/var/jenkins_home `
+>> -v /var/run/docker.sock:/var/run/docker.sock jenkins/jenkins:lts
+```
