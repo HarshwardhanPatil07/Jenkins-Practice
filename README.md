@@ -189,3 +189,29 @@ PS C:\> docker run -p 8080:8080 -p 50000:50000 -d `
 
 Finally!! lol!
 ![JenkinsBuilds](/assets/JenkinsBuilds.png)
+
+
+FreeStyle project over - - - - - - - - - - -
+
+
+
+Pipeline
+
+Script is written in groovy
+
+GO ahead with pipeline in jenkins Dashboard
+
+in definition select Pipeline script from SCM bcoz want to use git for script
+
+now configure your git repo url, credentials, and your project branch
+
+after that it will look in root folder for Jenkinsfile
+
+![alt text](/assets/Pipeline_1st.png)
+
+URL for ENV Variables in Jenkins http://localhost:8080/env-vars.html/
+
+
+Full Pipeline Successful
+![alt text](/assets/fullPipelineStageView.png)
+![alt text](/assets/Full_Pipeline.png)
