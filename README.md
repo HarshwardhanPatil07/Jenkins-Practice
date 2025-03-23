@@ -207,11 +207,28 @@ now configure your git repo url, credentials, and your project branch
 
 after that it will look in root folder for Jenkinsfile
 
-![alt text](/assets/Pipeline_1st.png)
+![Pipeline_1st](/assets/Pipeline_1st.png)
 
 URL for ENV Variables in Jenkins http://localhost:8080/env-vars.html/
 
 
 Full Pipeline Successful
-![alt text](/assets/fullPipelineStageView.png)
-![alt text](/assets/Full_Pipeline.png)
+![fullPipelineStageView](/assets/fullPipelineStageView.png)
+![Full_Pipeline](/assets/Full_Pipeline.png)
+
+## MultiBranch Pipeline
+
+Each branch (e.g., feature-branch, hotfix, release) can have its own pipeline execution.
+Jenkins automatically detects new branches with Jenkinsfile and runs pipelines for them.
+Useful for testing code changes before merging.
+Different branches can have different Jenkinsfile configurations, allowing for unique build, test, and deployment steps.
+
+1. select multibranch in new item in jenkins
+2. select Branch Sources as git 
+3. and in discover branches select Filter by name (with regular expression) which adds branch automatically when it gets added
+
+![Multibranch_View](/assets/Multibranch_View.png)
+
+You can Add Expression of BRANCH_NAME so it gets identified at build and deploy phase
+
+![TypesOfJenkinsJobs](/assets/TypesOfJenkinsJobs.png)
