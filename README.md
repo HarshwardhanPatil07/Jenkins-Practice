@@ -232,3 +232,7 @@ Different branches can have different Jenkinsfile configurations, allowing for u
 You can Add Expression of BRANCH_NAME so it gets identified at build and deploy phase
 
 ![TypesOfJenkinsJobs](/assets/TypesOfJenkinsJobs.png)
+
+
+
+Afterwards used the jenkins-shared Library  
