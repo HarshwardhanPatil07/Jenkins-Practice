@@ -1,3 +1,6 @@
+For Code Refer the Repo https://github.com/HarshwardhanPatil07/jenkins-java-maven-app
+Under which choose the AutomaticVersioning git Branch 
+
 ![alt text](/assets/SoftwareVersioning.png)
 
 Automatic versioning 
