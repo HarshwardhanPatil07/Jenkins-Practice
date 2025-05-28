@@ -1,4 +1,4 @@
-![alt text](Trigger.png)
+![alt text](/assets/Trigger.png)
 
 1. Get Gitlab Plugin and create token in gitlab under access token 
 
